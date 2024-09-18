@@ -2,12 +2,12 @@
 
 Ada Lovelace (1815-1852) byla britská matematička, která je často považována za první programátorku na světě. Spolupracovala s Charlesem Babbagem na návrhu jeho mechanického počítače, analytického stroje, a napsala první algoritmus, který byl zamýšlen k provádění strojem.
 
-Lovelace byla výjimečná tím, že rozpoznala mnohem větší potenciál počítačů, než jen prosté provádění matematických výpočtů.
+Lovelace byla výjimečná tím, že rozpoznala mnohem větší potenciál pocitačů, než jen prosté provádění matematických výpočtů.
 
 ## Významné příspěvky:
-- Napsala první algoritmus pro stroj (Analytický stroj Charlese Babbage)
-- První pochopila, že počítače mohou manipulovat s více než čísly (hudba, text)
-- Inspirovala další generace žen v technologiích
+- Napsala prvni algoritmus pro stroj (Analytický stroj Charlese Babbage)
+- První pochopila, ze počítače mohou manipulovat s více než cusly (hudba, text)
+- Inspirovala dalsi generace žen v technologiich
 
 Více informací najdete [zde](https://en.wikipedia.org/wiki/Ada_Lovelace).
 
