@@ -11,7 +11,6 @@ Lovelace byla výjimečná tím, že rozpoznala mnohem větší potenciál pocit
 
 ## Zajímavosti:
 | Rok | Událost |
-|-----|---------|
 | 1842 | Napsala první algoritmus |
 | 1980 | Ada byla poctěna jazykem „Ada“ |
 
