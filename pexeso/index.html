@@ -6,7 +6,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>ovocné pexeso</h1>
+    <h1>ovocné a smajlíkové pexeso</h1>
+    <div id="controls">
+        <label for="pairs">Počet párů:</label>
+        <input type="number" id="pairs" min="2" max="10" value="8">
+        <label for="skin">Skin:</label>
+        <select id="skin">
+            <option value="fruit">Ovoce</option>
+            <option value="emoji">Smajlíky</option>
+        </select>
+        <button id="start-button">Start</button>
+    </div>
     <div id="score">Body: <span id="score-value">0</span></div>
     <div id="game-board"></div>
     <button id="reset-button">Reset</button>

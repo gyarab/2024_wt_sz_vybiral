@@ -1,29 +1,32 @@
-const cards = [
-    '😀', '😀', '😎', '😎',
-    '😂', '😂', '🥳', '🥳',
-    '😇', '😇', '🤩', '🤩',
-    '😡', '😡', '😭', '😭'
-];
+const fruitCards = ['🍎', '🍊', '🍌', '🍓', '🍉', '🍍', '🍑', '🍒', '🍍', '🍋'];
+const emojiCards = ['😀', '😎', '😂', '🥳', '😇', '🤩', '😡', '😭', '😱', '😴'];
 
 let flippedCards = [];
 let matchedCards = [];
 let score = 0;
-
+let totalPairs = 8; 
+let cardSymbols = fruitCards;
 function initializeGame() {
     score = 0;
     flippedCards = [];
     matchedCards = [];
     document.getElementById('score-value').textContent = score;
 
-    const shuffledCards = shuffle([...cards]);
+    totalPairs = parseInt(document.getElementById('pairs').value);
+    const skin = document.getElementById('skin').value;
+    cardSymbols = skin === 'emoji' ? emojiCards : fruitCards;
+
+    const selectedCards = shuffle([...cardSymbols.slice(0, totalPairs), ...cardSymbols.slice(0, totalPairs)]);
+
     const gameBoard = document.getElementById('game-board');
     gameBoard.innerHTML = '';
+    gameBoard.style.gridTemplateColumns = `repeat(${Math.ceil(Math.sqrt(totalPairs * 2))}, 100px)`;  // Dynamicky nastaví sloupce podle počtu karet
 
-    shuffledCards.forEach((symbol, index) => {
+    selectedCards.forEach(symbol => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.dataset.symbol = symbol;
-        card.dataset.index = index;
+        card.setAttribute('data-symbol', symbol);  // Ukládá symbol pro zobrazení
         card.addEventListener('click', handleCardClick);
         gameBoard.appendChild(card);
     });
@@ -38,14 +41,13 @@ function shuffle(array) {
 }
 
 function handleCardClick(e) {
-    const card = e.target;
+    const card = e.target.closest('.card');
     if (flippedCards.length < 2 && !card.classList.contains('flipped')) {
         card.classList.add('flipped');
-        card.textContent = card.dataset.symbol;
         flippedCards.push(card);
 
         if (flippedCards.length === 2) {
-            checkMatch();
+            setTimeout(checkMatch, 1000);  // Pauza před kontrolou shody
         }
     }
 }
@@ -59,20 +61,16 @@ function checkMatch() {
         score++;
         document.getElementById('score-value').textContent = score;
     } else {
-        setTimeout(() => {
-            card1.classList.remove('flipped');
-            card2.classList.remove('flipped');
-            card1.textContent = '';
-            card2.textContent = '';
-        }, 1000);
+        card1.classList.remove('flipped');
+        card2.classList.remove('flipped');
     }
     flippedCards = [];
-
-    if (matchedCards.length === cards.length) {
+    if (matchedCards.length === document.querySelectorAll('.card').length) {
         setTimeout(() => alert('Gratulujeme! Vyhráli jste!'), 500);
     }
 }
 
+document.getElementById('start-button').addEventListener('click', initializeGame);
 document.getElementById('reset-button').addEventListener('click', initializeGame);
 
 initializeGame();
