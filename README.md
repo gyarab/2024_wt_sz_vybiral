@@ -18,5 +18,3 @@ Lovelace byla výjimečná tím, že rozpoznala mnohem větší potenciál pocit
 Více informací najdete [zde](https://en.wikipedia.org/wiki/Ada_Lovelace).
 
 ![Ada Lovelace](https://upload.wikimedia.org/wikipedia/commons/a/a4/Ada_Lovelace_portrait.jpg)
-
-
